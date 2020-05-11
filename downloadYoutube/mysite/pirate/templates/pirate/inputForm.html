@@ -9,23 +9,51 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <style>
-centering {
-    height: 200px;
-    width: 400px;
-    background: black;
+.UsernameCentering {
+  height: 200px;
+  width: 400px;
 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+}
+.PasswordInputCentering{
+  height: 200px;
+  width: 400px;
+
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+}
+.submitButton{
+  height: 200px;
+  width: 400px;
+
+  position: fixed;
+  top: 60%;
+  left: 60%;
+  margin-top: -100px;
+  margin-left: -200px;
 }
 </style>
 <body>
-  <div class='centering'>
-    {% csrf_token %}
-    <label for="link">Link: </label>
-    <input id="link" type="text" name="link" maxlength="500" required>
-  </div>
+    <div class="row">
+      <div class = "UsernameCentering">
+        <!-- <form action="/twitter/login/" method="post"> -->
+        <!-- <form action='index' method="post"> -->
+        <form method="post">
+          {% csrf_token %}
+          <label for="link">Link: </label>
+          <input id="link" type="text" name="link" maxlength="100" required />
+          <button type='submit'>Submit</button>
+        </form>
+      </div>
+    </div>
+  </form>
 </body>
 </html>
