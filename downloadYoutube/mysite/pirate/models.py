@@ -9,5 +9,7 @@ class Video(models.Model):
     name = models.CharField(max_length=400)
 
 class Playlist(models.Model):
-    Videos = models.ForeignKey(Video, on_delete=models.CASCADE)
+    Videos = models.ManyToManyField(Video)
     description = models.CharField(max_length=4000)
+
+#python manage.py migrate --run-syncdb
